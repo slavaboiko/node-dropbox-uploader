@@ -6,6 +6,7 @@ Connect your account to app and allow everyone upload files to your dropbox fold
 
 App uses following ENV variables:
 * process.env.CONTEXT_PATH - app context path (ex. 'https://example.com')
+
 Dropbox settings
 * process.env.DROPBOX_APP_KEY
 * process.env.DROPBOX_APP_SECRET
