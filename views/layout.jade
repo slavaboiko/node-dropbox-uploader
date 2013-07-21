@@ -1,0 +1,47 @@
+!!! 5
+html
+    head
+        block head
+            title= title
+            link(rel='stylesheet', href='/assets/css/bootstrap.min.css')
+            link(rel='stylesheet', href='/assets/css/bootstrap-responsive.min.css')
+            link(rel='stylesheet', href='/assets/css/basic.css')
+            link(rel='stylesheet', href='/assets/css/dropzone.css')
+
+            script(src='/assets/js/jquery.min.js', type="text/javascript")
+            script(src='/assets/js/dropzone.js', type="text/javascript")
+
+            style.
+                /* Custom container */
+                .container-narrow {
+                    margin: 50px auto;
+                    max-width: 800px;
+                }
+                .container-narrow > hr {
+                    margin: 30px 0;
+                }
+
+                /* Main marketing message and sign up button */
+                .jumbotron {
+                    margin: 60px 0;
+                    text-align: center;
+                }
+                .jumbotron h1 {
+                    font-size: 72px;
+                    line-height: 1;
+                }
+                .jumbotron .btn {
+                    font-size: 21px;
+                    padding: 14px 24px;
+                }
+    body
+        .container-fluid.container-narrow
+            .header
+                unless session.logged_in
+                    .pull-right
+                        a.btn.btn-large.btn-success(href='login') Sign in
+                h3 In-Drop&nbsp;
+                    small Dropbox Uploader
+            hr
+            .row-fluid
+                block content

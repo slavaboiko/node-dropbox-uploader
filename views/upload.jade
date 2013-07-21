@@ -1,0 +1,7 @@
+extends layout
+
+block content
+    h3.muted Upload file
+
+    form#my-awesome-dropzone.well.dropzone(action='/upload')
+        input(type='hidden', name='uid', value=userId)
