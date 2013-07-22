@@ -109,9 +109,13 @@ exports.upload = function (req, res) {
                         res.send('success', 200);
                     }
 
-                    helper.client(user.credentials).writeFile(file.name, data, function(status, reply) {
-                        console.log('Status:', status);
-                        console.log('Reply:', reply);
+                    helper.client(user.credentials, function(error, client) {
+                       if (!error && client) {
+                            client.writeFile(file.name, data, function(status, reply) {
+                               console.log('Status:', status);
+                               console.log('Reply:', reply);
+                           });
+                       }
                     });
                 });
             }
